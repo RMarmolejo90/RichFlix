@@ -1,3 +1,4 @@
+
 export default async function getTopRatedMovies(){
   const options = {
       method: 'GET',
@@ -8,8 +9,9 @@ export default async function getTopRatedMovies(){
     };
     
 
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+  const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+  if (!res.ok) {
+    throw new Error("Error fetching movie data");
+  }
+  return(res.json)
 }

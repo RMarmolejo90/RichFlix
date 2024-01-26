@@ -1,6 +1,8 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/dist/server/api-utils";
+import { getTopRatedMovies } from "@/lib/movies/getTopRated"
 
+const topRatedMovies: Promise = getTopRatedMovies();
 
 export default function Home() {
   async function getMovieData(){
@@ -10,6 +12,7 @@ export default function Home() {
    
 
     // fetch movie data
+
     // if movie data exists, respond with data
     // if no data, respond with error
 
