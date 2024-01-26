@@ -1,8 +1,14 @@
 import React from 'react'
 
-export default function page({ params }) {
+type Params = {
+  params: {
+    movieId: string;
+  }
+}
 
-  const movie: string = params.movie
+export default function page({ params: { movieId } }: Params) {
+
+  const movieData = movieId
 
   // fetch movie === movie.id from movieDB API
 
