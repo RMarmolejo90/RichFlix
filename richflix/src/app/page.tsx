@@ -2,7 +2,8 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/dist/server/api-utils";
 import { getTopRatedMovies } from "@/lib/movies/getTopRated"
 
-const topRatedMovies: Promise = getTopRatedMovies();
+
+const topRatedMovies: Promise<Movies[]> = getTopRatedMovies();
 
 export default function Home() {
   async function getMovieData(){
