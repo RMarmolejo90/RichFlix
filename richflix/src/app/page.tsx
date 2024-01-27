@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/dist/server/api-utils";
 import { getTopRatedMovies } from "@/lib/movies/getTopRated"
-
+import { MovieCard } from @components/MovieCard;
 
 const topRatedMovies: Promise<Movies[]> = getTopRatedMovies();
 
@@ -22,6 +22,7 @@ export default function Home() {
     <main>
 
       {/* Recommended Carousel or watchlist (if authorized) */}
+      <MovieCard data = {getTopRatedMovies}/>
       
     </main>
 
