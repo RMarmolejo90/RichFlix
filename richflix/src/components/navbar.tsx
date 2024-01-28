@@ -10,7 +10,7 @@ export default function navbar() {
         </p>
         <ul className='ml-auto'>
             <li>
-                <Link href={}></Link>
+                <Link href="/"></Link>
             </li>
         </ul>
         <UserButton afterSignOutUrl="/"/>

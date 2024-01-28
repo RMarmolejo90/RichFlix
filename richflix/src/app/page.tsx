@@ -13,10 +13,9 @@ export default function Home() {
 
     // if movie data exists, respond with data
     // if no data, respond with error
-    console.log(getTopRatedMovies());
     return (
       <main>
-
+      <h1 className="text-slate-50">Home</h1>
       {/* Recommended Carousel or watchlist (if authorized) */}
       <MovieList data={getTopRatedMovies}/>
       
