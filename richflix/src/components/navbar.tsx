@@ -1,19 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
-export default function navbar() {
+export default function Navbar() {
   return (
-    <nav className='flex flex-row content-between'>
+    <div className='flex flex-row content-between'>
         <p className='mr-auto'>
             RichFlix
         </p>
-        <ul className='ml-auto'>
-            <li>
-                <Link href="/"></Link>
-            </li>
-        </ul>
-        <UserButton afterSignOutUrl="/"/>
-    </nav>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/"/>
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+    </div>
   )
 }

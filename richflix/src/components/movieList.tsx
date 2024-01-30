@@ -1,8 +1,8 @@
 import { type } from 'os';
-import React, { useEffect, useState } from 'react'
+import React, {useEffect} from 'react'
 
 type Data = {
-  data: () => Promise<Movie>;
+  movieData: () => Promise<Movie[] | Movie>;
 }
 
 const MovieCard: React.FC<Movie> = (movie) => {
@@ -14,13 +14,14 @@ const MovieCard: React.FC<Movie> = (movie) => {
   )
 }
 
-export default function movieList({data}: Data) {
+export default function movieList({movieData}: Data) {
+  console.log(movieData);
   
-  const movies: any[] = Object.values(data);
+  const movies: Movie[] = Object.values(movieData);
   return (
-    <>
-      {movies.map((movie) => {<MovieCard key={movie.id} {...movie}/>})}
-    </>
+    <div>
+      {movies.map((movie) => (<MovieCard key={movie.id} {...movie}/>))}
+    </div>
   );
 };
 
