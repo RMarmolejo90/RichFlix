@@ -6,14 +6,16 @@ const options = {
   }
 };
 
-export default async function getTopRatedMovies(): Promise<QueryData> {
+
+export default async function getTopRatedMovies() {
   const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   
   if (!res.ok) {
     throw new Error("Error Fetching Movie Data");
   }
   
-  const data: Promise<QueryData> = await res.json();
+  const data: QueryData = await res.json();
   
   return(data);
 }
+
