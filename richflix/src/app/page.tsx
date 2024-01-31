@@ -1,8 +1,8 @@
 import { auth } from "@clerk/nextjs";
-import  getTopRatedMovies  from "@/lib/movies/getMovieData";
 import  MovieList  from "@/components/movieList";
 import requests from "@/lib/movies/requests";
 
+const topRated: string = requests.topRated;
 
 export default function Home() {
     // if user is authorized - redirect to "/[user]"
@@ -11,7 +11,7 @@ export default function Home() {
     return (
       <main>
         <h1>Home</h1>
-        <MovieList fetchUrl={requests.topRated}/>
+        <MovieList fetchUrl={topRated}/>
       </main>
     );
   }

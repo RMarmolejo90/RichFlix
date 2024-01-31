@@ -13,8 +13,6 @@ const MovieCard: React.FC<Movie> = (movie) => {
   )
 }
 
- 
-
 
 const MovieList = async (fetchUrl: string) => {
   
