@@ -6,9 +6,12 @@ const options = {
   }
 };
 
+interface FetchUrl {
+  fetchUrl: string
+}
 
-export default async function getTopRatedMovies() {
-  const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+export default async function getMovieData({fetchUrl}: FetchUrl) {
+  const res = await fetch({fetchUrl}, options)
   
   if (!res.ok) {
     throw new Error("Error Fetching Movie Data");

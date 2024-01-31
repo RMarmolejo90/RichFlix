@@ -1,8 +1,8 @@
 type QueryData = {
-  page: number
-  results: Result[]
-  total_pages: number
-  total_results: number
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
 }
 
 type Movie = {

@@ -1,16 +1,8 @@
 import { auth } from "@clerk/nextjs";
-import  getTopRatedMovies  from "@/lib/movies/getTopRatedmovies";
+import  getTopRatedMovies  from "@/lib/movies/getMovieData";
 import  MovieList  from "@/components/movieList";
+import requests from "@/lib/movies/requests";
 
-const topRatedMovies = async () => {
-    try {
-      const movieData = await getTopRatedMovies();
-      return movieData;
-    } catch (error) {
-      console.error("Error fetching movie data:", error);
-      return [];
-    }
-  };
 
 export default function Home() {
     // if user is authorized - redirect to "/[user]"
@@ -19,7 +11,7 @@ export default function Home() {
     return (
       <main>
         <h1>Home</h1>
-        <MovieList queryData={topRatedMovies}/>
+        <MovieList fetchUrl={requests.topRated}/>
       </main>
     );
   }
