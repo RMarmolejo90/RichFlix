@@ -13,13 +13,17 @@ const MovieCard: React.FC<Movie> = (movie) => {
   )
 }
 
+interface Fetchurl {
+  fetchUrl: string
+}
 
-const MovieList = async (fetchUrl: string) => {
+
+const MovieList = async ({fetchUrl}: Fetchurl) => {
   
   async function getMovies(fetchUrl: string): Promise<Movie[]> {
     const response = await fetch(fetchUrl, requests.options);
     const data: QueryData = await response.json();
-    const movies = await data.results;
+    const movies = data.results;
     return movies;
   }
   const movies = await getMovies(fetchUrl)

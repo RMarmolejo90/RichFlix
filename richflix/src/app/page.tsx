@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import  MovieList  from "@/components/movieList";
 import requests from "@/lib/movies/requests";
 
-const topRated: string = requests.topRated;
+const topRated:string = requests.topRated;
 
 export default function Home() {
     // if user is authorized - redirect to "/[user]"
