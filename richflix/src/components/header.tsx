@@ -2,12 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import requests from '@/lib/movies/requests';
 
-const [movies, setMovies] = useState([]);
+const [movies, setMovies] = useState<Movie[]>([]);
+
+
 
 useEffect(()=> {
-  fetch(requests.popular, requests.options).then(
-    
-})
+  async function getMovies(fetchUrl: string): Promise<Movie[]> {
+    const response = await fetch(fetchUrl, requests.options);
+    const data: QueryData = await response.json();
+    if (!data) {throw Error(`error fetching data from ${fetchUrl}`)}
+    else {
+      const movies = data.results;
+      return movies
+    }
+  }
+  const movies = await getMovies(requests.popular);
+  setMovies(movies);
+}, [])
 
 const header = () => {
   return (
