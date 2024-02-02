@@ -32,8 +32,11 @@ const MovieList = async ({fetchUrl}: Fetchurl) => {
   async function getMovies(fetchUrl: string): Promise<Movie[]> {
     const response = await fetch(fetchUrl, requests.options);
     const data: QueryData = await response.json();
-    const movies = data.results;
-    return movies;
+    if (!data) {throw Error(`error fetching data from ${fetchUrl}`)}
+    else {
+      const movies = data.results;
+      return movies;
+    }
   }
   const movies = await getMovies(fetchUrl)
 

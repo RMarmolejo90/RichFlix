@@ -1,12 +1,20 @@
+import genres from "./genres"
+
 const requests = {
   topRated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+  popular: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
   comingSoon: 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
-  comedy: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy',
-  drama: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=drama',
-  thriller: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=thriller',
-  romance: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=romance',
-  comedyTV: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy',
-  topRatedTV: 'https://api.themoviedb.org/3/account/20943228/rated/tv?language=en-US&page=1&sort_by=created_at.asc',
+  horror: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.horror.id}`,
+  action: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.action.id}`,
+  adventure: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.adventure.id}`,
+  documentary: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.documentary.id}`,
+  nowPlaying: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}',
+  comedy: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1,page=2,page=3&sort_by=popularity.desc&with_genres=${genres.comedy.id}`,
+  drama: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.drama.id}`,
+  thriller: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.thriller.id}`,
+  romance: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.romance.id}`,
+  comedyTV: `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.comedy.id}`,
+  topRatedTV: `https://api.themoviedb.org/3/account/20943228/rated/tv?language=en-US&page=1&sort_by=created_at.asc`,
   options: {
     method: 'GET',
     headers: {
