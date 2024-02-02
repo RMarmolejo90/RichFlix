@@ -10,7 +10,7 @@ const MovieCard: React.FC<Movie> = (movie) => {
   const imageSize = "w342";
   const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-column p-4'>
       <Image 
         src={posterUrl}
         alt={movie.title}
@@ -18,7 +18,6 @@ const MovieCard: React.FC<Movie> = (movie) => {
         height={100}
         quality={100}
       />
-      <h3>{movie.title}</h3>
     </div>
   )
 }
@@ -39,7 +38,7 @@ const MovieList = async ({fetchUrl}: Fetchurl) => {
   const movies = await getMovies(fetchUrl)
 
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-row overflow-x-scroll'>
       {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
     </div>
   );
