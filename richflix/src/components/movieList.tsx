@@ -41,7 +41,7 @@ const MovieList = async ({fetchUrl}: Fetchurl) => {
   const movies = await getMovies(fetchUrl)
 
   return (
-    <div className='flex flex-row overflow-x-scroll'>
+    <div className='flex flex-row overflow-x-scroll scroll-smooth scrollbar-hide whitespace-nowrap '>
       {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
     </div>
   );
