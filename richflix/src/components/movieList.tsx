@@ -7,15 +7,15 @@ import Image from 'next/image';
 
 
 const MovieCard: React.FC<Movie> = (movie) => {
-  const imageSize = "w342";
+  const imageSize = "w500";
   const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
   return (
-    <div className='flex flex-column p-4'>
+    <div className='flex-none px-2'>
       <Image 
         src={posterUrl}
         alt={movie.title}
-        width={100} 
-        height={100}
+        width={128} 
+        height={200}
         quality={100}
       />
     </div>
@@ -41,7 +41,7 @@ const MovieList = async ({fetchUrl}: Fetchurl) => {
   const movies = await getMovies(fetchUrl)
 
   return (
-    <div className='flex flex-row overflow-x-scroll scroll-smooth scrollbar-hide whitespace-nowrap '>
+    <div className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide'>
       {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
     </div>
   );
