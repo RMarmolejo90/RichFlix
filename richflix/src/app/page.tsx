@@ -21,8 +21,7 @@ export default function Home() {
     // this will need to be done with middleware - NextResponse.redirect() or in Clerk
    
     return (
-      <main>
-        <h1>Home</h1>
+      <main className="bg-slate-800">
         <MovieList 
           fetchUrl={topRated}
           listName="Top Rated"

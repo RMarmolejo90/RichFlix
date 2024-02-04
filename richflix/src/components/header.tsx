@@ -24,7 +24,7 @@ const header = () => {
   return (
     <div className='w-full h-96 text-white'>
       <div>
-        <Image src= alt= />
+        <Image src={} alt= />
       </div>
     </div>
   )
