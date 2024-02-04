@@ -23,19 +23,58 @@ export default function Home() {
     return (
       <main>
         <h1>Home</h1>
-        <MovieList fetchUrl={topRated}/>
-        <MovieList fetchUrl={comingSoon}/>
-        <MovieList fetchUrl={nowPlaying}/>
-        <MovieList fetchUrl={comedy}/>
-        <MovieList fetchUrl={drama}/>
-        <MovieList fetchUrl={thriller}/>
-        <MovieList fetchUrl={romance}/>
-        <MovieList fetchUrl={comedyTV}/>
-        <MovieList fetchUrl={topRatedTV}/>
-        <MovieList fetchUrl={horror}/>
-        <MovieList fetchUrl={action}/>
-        <MovieList fetchUrl={adventure}/>
-        <MovieList fetchUrl={documentary}/>
+        <MovieList 
+          fetchUrl={topRated}
+          name="Top Rated"
+        />
+        <MovieList 
+          fetchUrl={comingSoon}
+          name="Coming Soon"
+        />
+        <MovieList 
+          fetchUrl={nowPlaying}
+          name="Now Playing"
+        />
+        <MovieList 
+          fetchUrl={comedy}
+          name="Comedy"
+        />
+        <MovieList 
+          fetchUrl={drama}
+          name="Drama"
+        />
+        <MovieList 
+          fetchUrl={thriller}
+          name="Thriller"
+        />
+        <MovieList 
+          fetchUrl={romance}
+          name="Romance"
+        />
+        <MovieList 
+          fetchUrl={comedyTV}
+          name="Comedy TV Shows"
+        />
+        <MovieList 
+          fetchUrl={topRatedTV}
+          name="Top Rated TV Shows"
+        />
+        <MovieList 
+          fetchUrl={horror}
+          name="Horror"
+        />
+        <MovieList 
+          fetchUrl={action}
+          name="Action"
+        />
+        <MovieList 
+          fetchUrl={adventure}
+          name="Adventure"
+        />
+        <MovieList 
+          fetchUrl={documentary}
+          name="Documentaries"
+        />
       </main>
     );
   }
