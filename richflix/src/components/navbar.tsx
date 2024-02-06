@@ -5,7 +5,7 @@ import { Bebas_Neue } from 'next/font/google'
 
 export default function Navbar() {
   return (
-    <div className='flex flex-row content-between p-2'>
+    <div className='flex flex-row content-between p-2 z-20 bg-transparent absolute top-0'>
         <h1 className='mr-auto font-[Bebas_Neue] text-red-600 p-4 text-lg'>
             RICHFLIX
         </h1>

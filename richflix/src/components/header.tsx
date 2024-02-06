@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import requests from '@/lib/movies/requests';
 import { useEffect, useState } from 'react';
+import { flushAllTraces } from 'next/dist/trace';
+import { Autour_One } from 'next/font/google';
 
 
 
@@ -37,13 +39,13 @@ const header = () => {
 
 
   return (
-    <div className='w-full h-40 text-white'>
+    <div className='w-full h-[400px] top-0 text-white overflow-hidden relative'>
       {backdrop && (<Image 
         src={backdrop} 
         alt={altTag} 
         quality={100}
-        fill
         sizes="100vw"
+        fill
         style={{
           objectFit: 'cover',
         }}
