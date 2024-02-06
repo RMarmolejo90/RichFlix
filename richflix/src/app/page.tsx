@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import  MovieList  from "@/components/movieList";
 import requests from "@/lib/movies/requests";
-
+import Header from "@/components/header";
 const topRated:string = requests.topRated;
 const comingSoon: string = requests.comingSoon;
 const comedy: string = requests.comedy;
@@ -9,19 +9,20 @@ const drama: string = requests.drama;
 const thriller: string = requests.thriller;
 const romance: string = requests.romance;
 const comedyTV: string = requests.comedyTV;
-const topRatedTV: string = requests.topRatedTV;
 const nowPlaying: string = requests.nowPlaying;
 const horror: string = requests.horror;
 const action: string = requests.action;
 const adventure: string = requests.adventure;
 const documentary: string = requests.documentary;
 
+
 export default function Home() {
     // if user is authorized - redirect to "/[user]"
     // this will need to be done with middleware - NextResponse.redirect() or in Clerk
    
     return (
-      <main className="bg-slate-800">
+      <main className="">
+        <Header />
         <MovieList 
           fetchUrl={topRated}
           listName="Top Rated"
@@ -53,10 +54,6 @@ export default function Home() {
         <MovieList 
           fetchUrl={comedyTV}
           listName="Comedy TV Shows"
-        />
-        <MovieList 
-          fetchUrl={topRatedTV}
-          listName="Top Rated TV Shows"
         />
         <MovieList 
           fetchUrl={horror}
