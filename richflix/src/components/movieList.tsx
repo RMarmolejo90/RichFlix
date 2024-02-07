@@ -42,9 +42,13 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
   const movies = await getMovies(fetchUrl)
 
   return (
-    <div className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide'>
-      <h3>{listName}</h3>
-      {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
+    <div className='flex flex-col'>
+      <div className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
+        <h2 className='p-2 pl-12'>{listName}</h2>
+      </div>
+      <div className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide'>
+        {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
+      </div>
     </div>
   );
 }
