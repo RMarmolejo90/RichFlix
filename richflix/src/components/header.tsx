@@ -37,8 +37,8 @@ const header = () => {
 
 
   return (
-    <div className='w-full h-[400px] top-0 text-white overflow-hidden relative '>
-      <div className='w-full h-[400px] top-0 absolute bg-gradient-to-r from-[#09090bCC] z-10'></div>
+    <div className='w-full h-[500px] top-0 text-white overflow-hidden relative '>
+      <div className='w-full h-[500px] top-0 absolute bg-gradient-to-r from-[#09090bCC] z-10'></div>
       {displayMovie && (<Image 
         src={backdrop} 
         alt={altTag} 
@@ -47,6 +47,7 @@ const header = () => {
         fill
         style={{
           objectFit: 'cover',
+          objectPosition: '50% 10%',
         }}
         priority={true}
       />)} 
