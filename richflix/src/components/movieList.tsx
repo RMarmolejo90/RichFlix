@@ -1,13 +1,16 @@
+'use client'
+
 import React from 'react'
 import requests from '@/lib/movies/requests';
 import Image from 'next/image';
+import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 // MovieList component displays the rows of fetched movie data
 
 
 interface Props{
   fetchUrl: string,
-  listName: string
+  listName: string,
 }
 
 const MovieList = async ({fetchUrl, listName}: Props) => {
@@ -28,6 +31,17 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
     )
   }
 
+  const slideLeft = () => {
+    const slider = document.getElementById('slider' + listName);
+    if (slider){
+      slider.scrollLeft = slider.scrollLeft - 400}
+  }
+  const slideRight = () => {
+    const slider = document.getElementById('slider' + listName);
+    if (slider){
+      slider.scrollLeft = slider.scrollLeft + 400}
+  }
+
   async function getMovies(fetchUrl: string): Promise<Movie[]> {
     const response = await fetch(fetchUrl, requests.options);
     const data: QueryData = await response.json();
@@ -44,8 +58,12 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
       <div className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
         <h2 className='p-2 pl-12'>{listName}</h2>
       </div>
-      <div className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide'>
-        {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}        
+      <div className='w-full flex flex-row relative items-center justify-between group'>
+        <ChevronLeftIcon onClick={slideLeft} className='p-2 m-4 left-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
+        <div id={'slider' + listName} className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide relative'>
+          {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}     
+        </div>
+        <ChevronRightIcon onClick={slideRight} className='p-2 m-4 right-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
       </div>
     </div>
   );
