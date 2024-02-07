@@ -13,7 +13,7 @@ const bebas = Bebas_Neue({
 export default function Navbar() {
   return (
     <div className='flex flex-row w-full content-between p-2 z-20 bg-transparent absolute top-0'>
-        <h1 className={`${bebas.className} mr-auto text-red-600 p-6 text-5xl`}>
+        <h1 className={`${bebas.className} mr-auto text-red-600 p-6 text-5xl tracking-wider`}>
             RICHFLIX
         </h1>
         <div className='ml-auto my-6 mr-8 font-semibold rounded-md tracking-widest text-lg'>

@@ -56,7 +56,7 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
   return (
     <div className='flex flex-col group'>
       <div className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
-        <h2 className='p-2 pl-12'>{listName}</h2>
+        <h2 className='p-2 pl-12 font-semibold text-xl tracking-wide'>{listName}</h2>
       </div>
       <div className='w-full flex flex-row relative items-center justify-between'>
         <ChevronLeftIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
