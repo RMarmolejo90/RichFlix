@@ -3,16 +3,13 @@
 import Image from 'next/image'
 import requests from '@/lib/movies/requests';
 import { useEffect, useState } from 'react';
-import { flushAllTraces } from 'next/dist/trace';
-import { Autour_One } from 'next/font/google';
-
 
 
 
 const header = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [displayMovie, setDisplayMovie] = useState<Movie>(movies[0]);
-  const backdropPath: string = displayMovie?.backdrop_path ?? '';
+  const [movies, setMovies] = useState<Movie[]>();
+  const [displayMovie, setDisplayMovie] = useState<Movie>();
+  const backdropPath: string | null = displayMovie?.backdrop_path ?? null;
   const backdrop: string = `https://image.tmdb.org/t/p/w1280${backdropPath}`;
   const altTag: string = displayMovie?.title??"Movie Backdrop image";
   
@@ -32,15 +29,17 @@ const header = () => {
   }, [])
   
   useEffect(() => {
-    const randomMovie = movies[Math.floor(Math.random() * movies.length)];
-    setDisplayMovie(randomMovie);
-    console.log("setDisplay");
-  }, [movies, 8000])
+    if (movies)
+      {const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+      setDisplayMovie(randomMovie);
+      console.log("setDisplay");}
+  }, [movies])
 
 
   return (
-    <div className='w-full h-[400px] top-0 text-white overflow-hidden relative'>
-      {backdrop && (<Image 
+    <div className='w-full h-[400px] top-0 text-white overflow-hidden relative '>
+      <div className='w-full h-[400px] top-0 absolute bg-gradient-to-r from-[#09090bCC] z-10'></div>
+      {displayMovie && (<Image 
         src={backdrop} 
         alt={altTag} 
         quality={100}
@@ -50,7 +49,7 @@ const header = () => {
           objectFit: 'cover',
         }}
         priority={true}
-      />)}
+      />)} 
     </div>
   )
 }

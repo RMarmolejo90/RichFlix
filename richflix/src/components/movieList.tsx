@@ -2,6 +2,7 @@ import { type } from 'os';
 import React, { useEffect, useState } from 'react'
 import requests from '@/lib/movies/requests';
 import Image from 'next/image';
+import { ok } from 'assert';
 
 // MovieList component displays the rows of fetched movie data
 
@@ -12,15 +13,15 @@ interface Props{
 }
 
 const MovieList = async ({fetchUrl, listName}: Props) => {
-  
   const MovieCard: React.FC<Movie> = (movie) => {
     const imageSize = "w500";
     const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
+    const altTag: string = movie.title ? movie.title : "Movie Poster Image";
     return (
       <div className='flex-none px-2'>
         <Image 
           src={posterUrl}
-          alt={movie.title}
+          alt={altTag}
           width={128} 
           height={200}
           quality={100}
@@ -32,7 +33,7 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
   async function getMovies(fetchUrl: string): Promise<Movie[]> {
     const response = await fetch(fetchUrl, requests.options);
     const data: QueryData = await response.json();
-    if (!data) {throw Error(`error fetching data from ${fetchUrl}`)}
+    if (!response.ok) {throw Error(`error fetching data from ${fetchUrl}`)}
     else {
       const movies = data.results;
       return movies;
