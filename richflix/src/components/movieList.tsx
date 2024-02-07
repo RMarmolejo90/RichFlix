@@ -54,16 +54,16 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
   const movies = await getMovies(fetchUrl)
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col group'>
       <div className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
         <h2 className='p-2 pl-12'>{listName}</h2>
       </div>
-      <div className='w-full flex flex-row relative items-center justify-between group'>
-        <ChevronLeftIcon onClick={slideLeft} className='p-2 m-4 left-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
+      <div className='w-full flex flex-row relative items-center justify-between'>
+        <ChevronLeftIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
         <div id={'slider' + listName} className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide relative'>
           {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}     
         </div>
-        <ChevronRightIcon onClick={slideRight} className='p-2 m-4 right-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
+        <ChevronRightIcon onClick={slideRight} className='hidden p-2 m-4 right-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
       </div>
     </div>
   );
