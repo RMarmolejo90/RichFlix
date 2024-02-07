@@ -2,6 +2,9 @@ import { auth } from "@clerk/nextjs";
 import  MovieList  from "@/components/movieList";
 import requests from "@/lib/movies/requests";
 import Header from "@/components/header";
+import { Inter } from 'next/font/google'
+
+ 
 const topRated:string = requests.topRated;
 const comingSoon: string = requests.comingSoon;
 const comedy: string = requests.comedy;
@@ -21,7 +24,7 @@ export default function Home() {
     // this will need to be done with middleware - NextResponse.redirect() or in Clerk
    
     return (
-      <main className="">
+      <main className=''>
         <Header />
         <MovieList 
           fetchUrl={topRated}

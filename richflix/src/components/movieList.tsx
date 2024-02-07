@@ -1,8 +1,6 @@
-import { type } from 'os';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import requests from '@/lib/movies/requests';
 import Image from 'next/image';
-import { ok } from 'assert';
 
 // MovieList component displays the rows of fetched movie data
 
