@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^4.29.5",
     "@heroicons/react": "^2.1.1",
     "next": "14.1.0",
+    "nookies": "^2.5.2",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-scrollbar-hide": "^1.1.7"

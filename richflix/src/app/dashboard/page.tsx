@@ -1,20 +1,11 @@
-import React from 'react'
-import Header from '@/components/header'
-import MovieList from '@/components/movieList'
-import requests from '@/lib/movies/requests'
+import Header from '@/components/header';
+import MovieList from '@/components/movieList';
 
-export default function dashboard() {
-
-
-fetch('https://api.themoviedb.org/3/authentication/token/new', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
-
+export default function Dashboard() {
   return (
     <>
       <Header />
       <MovieList />
     </>
-  )
+  );
 }
