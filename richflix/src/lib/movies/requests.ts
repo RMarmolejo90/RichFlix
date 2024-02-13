@@ -1,5 +1,4 @@
 import genres from "./genres"
-
 const apiKey = process.env.MOVIE_API_KEY;
 
 const requests = {
