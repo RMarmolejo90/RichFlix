@@ -3,7 +3,7 @@ import React from 'react'
 import { UserButton, SignInButton, SignUpButton, auth } from "@clerk/nextjs";
 import { Bebas_Neue } from "next/font/google";
 
-const { userId }: string | null = auth();
+const { userId }: {userId: string | null} = auth();
 
 const bebas = Bebas_Neue({ 
   weight: '400', 
