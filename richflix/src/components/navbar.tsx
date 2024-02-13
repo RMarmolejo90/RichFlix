@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
-import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { UserButton, SignInButton, SignUpButton, auth } from "@clerk/nextjs";
 import { Bebas_Neue } from "next/font/google";
+
+const { userId }: string | null = auth();
 
 const bebas = Bebas_Neue({ 
   weight: '400', 
@@ -10,19 +12,26 @@ const bebas = Bebas_Neue({
 });
 
 
+
 export default function Navbar() {
   return (
-    <div className='flex flex-row w-full content-between p-2 z-20 bg-transparent absolute top-0'>
+    <div className='flex flex-row w-full content-between p-2 z-50 bg-transparent absolute top-0'>
         <h1 className={`${bebas.className} mr-auto text-red-600 p-6 text-5xl tracking-wider`}>
             RICHFLIX
         </h1>
         <div className='ml-auto my-6 mr-8 font-semibold rounded-md tracking-widest text-lg'>
-          <SignedIn>
-            <UserButton afterSignOutUrl="/"/>
-          </SignedIn>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
+          
+          {// if not logged in, display signin/signup buttons
+          !userId ?
+            <div>
+              <SignInButton afterSignInUrl='/'/>
+              <SignUpButton />
+            </div>
+              :   // if logged in, display user button       
+            <div>
+              <UserButton afterSignOutUrl="/"/>
+            </div> 
+          }
         </div>
     </div>
   )

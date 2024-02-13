@@ -23,7 +23,7 @@ const MovieList = async ({fetchUrl, listName}: Props) => {
         <Image 
           src={posterUrl}
           alt={altTag}
-          width={128} 
+          width={200} 
           height={200}
           quality={100}
         />
