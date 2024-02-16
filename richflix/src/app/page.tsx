@@ -1,8 +1,6 @@
-import { auth } from "@clerk/nextjs";
 import  MovieList  from "@/components/movieList";
 import requests from "@/lib/movies/requests";
 import Header from "@/components/header";
-import { Inter } from 'next/font/google'
 
  
 const topRated:string = requests.topRated;
