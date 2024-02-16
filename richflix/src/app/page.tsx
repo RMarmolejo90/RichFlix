@@ -1,5 +1,5 @@
 import  MovieList  from "@/components/movieList";
-import requests from "@/lib/movies/requests";
+import requests from "@/_lib/movies/requests";
 import Header from "@/components/header";
 
  
