@@ -1,5 +1,5 @@
 import genres from "./genres"
-const apiKey = process.env.MOVIE_API_KEY;
+const apiKey = process.env.DB_API_KEY;
 
 const requests = {
   topRated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
@@ -19,7 +19,8 @@ const requests = {
     method: 'GET',
     headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${apiKey}`
+    Authorization: `Bearer ${apiKey};
+}`,
     }
   }
 }

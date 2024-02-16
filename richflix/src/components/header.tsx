@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 const headerMoviesURL: string = requests.nowPlaying;
 
 const header = () => {
+  
   const [movies, setMovies] = useState<Movie[]>();
   const [displayMovie, setDisplayMovie] = useState<Movie>();
   const backdropPath: string | null = displayMovie?.backdrop_path ?? null;
