@@ -19,8 +19,7 @@ const requests = {
     method: 'GET',
     headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${apiKey};
-}`,
+    Authorization: `Bearer ${apiKey}`,
     }
   }
 }

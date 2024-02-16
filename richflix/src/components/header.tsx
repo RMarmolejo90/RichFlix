@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import requests from '@/lib/movies/requests';
-import fetchRandomMovie from '@/utils/fetchRandomMovie.ts'
+import fetchRandomMovie from '@/app/utils/fetchRandomMovie';
 
 // this is the url to select a random movie from
 const movieURL: string = requests.nowPlaying;
 
-const displayMovie = await fetchRandomMovie(movieURL);
 
-const header = () => {
+export default async function header() {
   
+  const displayMovie = await fetchRandomMovie(movieURL);
   const backdropPath: string | null = displayMovie?.backdrop_path ?? null;
   const backdrop: string = `https://image.tmdb.org/t/p/w1280${backdropPath}`;
   const altTag: string = displayMovie?.title??"Movie Backdrop image";
@@ -39,5 +39,3 @@ const header = () => {
   </div>
 )
 }
-
-export default header
