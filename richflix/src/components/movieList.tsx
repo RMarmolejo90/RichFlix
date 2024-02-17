@@ -20,7 +20,7 @@ const MovieList = ({fetchUrl, listName}: Props) => {
     const fetchData = async () => {
       try {
         const fetchedMovies = await fetchMovieList(fetchUrl);
-        setMovies(fetchedMovies); // Update state with fetched movies
+        setMovies(fetchedMovies);
       } catch (error) {
         console.error("Failed to fetch movies:", error);
       }

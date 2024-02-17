@@ -15,7 +15,7 @@ const bebas = Bebas_Neue({
 
 export default function Navbar() {
   return (
-    <div className='flex flex-row w-full content-between p-2 z-50 bg-transparent absolute top-0'>
+    <div className='flex flex-row w-full align-top content-between p-2 z-50 bg-gradient-to-b from-[#09090bCC] absolute top-0'>
         <h1 className={`${bebas.className} mr-auto text-red-600 p-6 text-5xl tracking-wider`}>
             RICHFLIX
         </h1>
@@ -23,9 +23,13 @@ export default function Navbar() {
           
           {// if not logged in, display signin/signup buttons
           !userId ?
-            <div>
-              <SignInButton afterSignInUrl='/'/>
-              <SignUpButton />
+            <div className='flex flex-row'>
+              <div className='m-2 hover:border-b-2 hover:cursor-pointer'>
+                <SignInButton afterSignInUrl='/'/>
+              </div>
+              <div className='m-2 hover:border-b-2 hover:cursor-pointer'>
+                <SignUpButton />
+              </div>
             </div>
               :   // if logged in, display user button       
             <div>

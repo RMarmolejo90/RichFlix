@@ -1,15 +1,12 @@
+"use server"
 import requests from "@/_lib/movies/requests";
 
 async function fetchMovieList(fetchUrl: string): Promise<Movie[]> {
   try {
     const response = await fetch(fetchUrl, requests.options);
-    
-    if (!response.ok) {
-      throw new Error(`Error fetching data from ${fetchUrl}`);
-    }
-
     const data: QueryData = await response.json();
     const movies = data.results;
+    if (movies.length === 0) {throw new Error('movies not found')}
     return movies;
     
   } catch (error) {
