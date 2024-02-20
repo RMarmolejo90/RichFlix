@@ -1,5 +1,5 @@
 "use server"
-import requests from "@/_lib/movies/requests";
+import requests from "@/app/_lib/movies/requests";
 
 async function fetchMovieList(fetchUrl: string): Promise<Movie[]> {
   try {

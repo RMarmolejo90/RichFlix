@@ -1,5 +1,5 @@
 import { setCookie } from 'nookies';
-import requests from "@/_lib/movies/requests";
+import requests from "@/app/_lib/movies/requests";
 import { GetServerSidePropsContext } from 'next';
 
 export async function createNewSession(context: GetServerSidePropsContext) {

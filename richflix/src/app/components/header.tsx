@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import requests from '@/_lib/movies/requests';
+import requests from '@/app/_lib/movies/requests';
 import fetchRandomMovie from '@/app/_utils/fetchRandomMovie';
 
 // this is the url to select a random movie from
