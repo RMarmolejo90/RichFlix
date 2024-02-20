@@ -1,4 +1,5 @@
 import React from 'react'
+import fetchMovieDetails from '@/app/_utils/fetchMovieDetails';
 
 type Params = {
   params: {
@@ -6,10 +7,11 @@ type Params = {
   }
 }
 
-export default function page({ params: { movieId } }: Params) {
+export default async function page({ params: { movieId } }: Params) {
 
-  const movieData = movieId
-
+  const id = movieId
+  const response = await fetchMovieDetails(movieId);
+  
   // fetch movie === movie.id from movieDB API
 
   // data === response.data
