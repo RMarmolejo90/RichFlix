@@ -16,10 +16,10 @@ export default function Navbar() {
   const { userId }: {userId: string | null} = auth();
   return (
     <div className='flex flex-row w-full align-top content-between p-2 z-50 bg-gradient-to-b from-[#09090bCC] absolute top-0'>
-        <h1 className={`${bebas.className} mr-auto text-red-600 p-6 text-5xl tracking-wider`}>
+        <h1 className={`${bebas.className} mr-auto text-red-600 p-2 text-4xl tracking-wider`}>
             RICHFLIX
         </h1>
-        <div className='ml-auto my-6 mr-8 font-semibold rounded-md tracking-widest text-lg'>
+        <div className='ml-auto lg:my-8 font-semibold rounded-md tracking-widest text-lg'>
           
           {// if not logged in, display signin/signup buttons
           !userId ?
