@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { ArrowRightCircleIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid';
 import fetchMovieList from '@/app/_utils/fetchMovieList';
 
 
@@ -67,11 +67,11 @@ const MovieList = ({fetchUrl, listName}: Props) => {
         <h2 className='p-2 pl-12 font-semibold text-xl tracking-wide'>{listName}</h2>
       </div>
       <div className='w-full flex flex-row relative items-center justify-between'>
-        <ChevronLeftIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
+        <ArrowLeftCircleIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
         <div id={'slider' + listName} className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide relative'>
           {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}     
         </div>
-        <ChevronRightIcon onClick={slideRight} className='hidden p-2 m-4 right-0 h-16 w-16 text-gray-200 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
+        <ArrowRightCircleIcon onClick={slideRight} className='hidden p-2 m-4 right-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
       </div>
     </div>
   );

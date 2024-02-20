@@ -12,6 +12,7 @@ export default async function header() {
   const backdropPath: string | null = displayMovie?.backdrop_path ?? null;
   const backdrop: string = `https://image.tmdb.org/t/p/w1280${backdropPath}`;
   const altTag: string = displayMovie?.title??"Movie Backdrop image";
+  const description = displayMovie?.overview.slice(0, 200)??"";
   
 
   return (
@@ -30,11 +31,12 @@ export default async function header() {
         priority={true}
       />)} 
       {displayMovie && (
-    <div className='absolute mt-[-200px] left-4 z-20'>
-      <h1 className='text-2xl tracking-wide font-bold'>{displayMovie.title}</h1>
-      <button className='border border-gray-200 tracking-wider font-semibold text-lg'>Details</button>
-    </div>
-  )}
+        <div className='absolute mt-[20vh] lg:mt-[15%] m-6 left-4 z-20 text-wrap w-[20rem]'>
+          <h1 className='text-2xl tracking-wide font-bold p-2'>{displayMovie.title}</h1>
+          <p className='p-2 text-md'>{description}...</p>
+          <button className='p-2 m-2 border border-gray-200 tracking-wider font-semibold text-md hover:border-gray-50 hover:text-gray-50'>Details</button>
+        </div>
+      )}
 
   </div>
 )
