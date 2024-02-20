@@ -9,8 +9,7 @@ type Params = {
 
 export default async function page({ params: { movieId } }: Params) {
 
-  const id = movieId
-  const response = await fetchMovieDetails(movieId);
+  const movie = await fetchMovieDetails(movieId);
   
   // fetch movie === movie.id from movieDB API
 
@@ -19,6 +18,7 @@ export default async function page({ params: { movieId } }: Params) {
 
   return (
     <div> 
+      <h1>{movie.title}</h1>
         {/* image */}
         {/* cast */}
         {/* description */}
