@@ -14,6 +14,8 @@ export default async function page({ params: { movieId } }: Params) {
     const movie = await fetchMovieDetails(movieId);
     const posterSize: string =  "w780"; 
     const altTag: string =  movie.title ? movie.title : "Movie Poster Image";
+    const description = movie?.overview??"";
+
   // fetch movie === movie.id from movieDB API
 
   // data === response.data
@@ -33,7 +35,7 @@ export default async function page({ params: { movieId } }: Params) {
       <h1 className='m-4 text-3xl'>{movie.title}</h1>
     </div>
         {/* cast */}
-        {/* description */}
+      <p className='m-3 text-md line-clamp-4'>{description}</p>
   </>
   )
 }
