@@ -2,7 +2,7 @@ import genres from "./genres"
 const apiKey = process.env.DB_API_KEY;
 
 const requests = {
-  topRated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+  topRated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1,2,3',
   popular: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
   comingSoon: 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
   horror: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres.horror.id}`,

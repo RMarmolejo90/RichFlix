@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { ArrowRightCircleIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid';
 import fetchMovieList from '@/app/_utils/fetchMovieList';
+import Link from 'next/link';
 
 
 // MovieList component displays the rows of fetched movie data
@@ -37,13 +38,15 @@ const MovieList = ({fetchUrl, listName}: Props) => {
     const altTag: string = movie.title ? movie.title : "Movie Poster Image";
     return (
       <div className='flex-none px-2'>
-        <Image 
-          src={posterUrl}
-          alt={altTag}
-          width={200} 
-          height={200}
-          quality={100}
-        />
+        <Link href={`/movies/${movie.id}`}>
+          <Image 
+            src={posterUrl}
+            alt={altTag}
+            width={200} 
+            height={200}
+            quality={100}
+          />
+        </Link>
       </div>
     )
   }
