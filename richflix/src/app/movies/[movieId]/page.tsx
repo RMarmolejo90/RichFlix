@@ -27,8 +27,8 @@ export default async function page({ params: { movieId } }: Params) {
   console.log(genresName);
     return (
     <div className='flex flex-col justify-center items-center'>
-      <div className='flex flex-row items-between justify-center mt-14'>
-        <div className='w-1/4 m-2'> 
+      <div className='flex flex-col lg:flex-row items-center justify-center mt-16 w-full'>
+        <div className='m-2'> 
           <Image 
             src={posterUrl}
             alt={altTag}
@@ -37,9 +37,9 @@ export default async function page({ params: { movieId } }: Params) {
             quality={100} 
           />
         </div>
-        <div className='w-1/3 m-2'>
+        <div className='w-full lg:w-1/3 m-2'>
           <h1 className='m-4 text-3xl border-b-2 text-center border-red-600 tracking-widest p-1'>{movie.title}</h1>
-          <p className='m-4 my-6 text-md'>{description}</p>
+          <p className='m-4 my-6 text-md leading-6'>{description}</p>
         </div>
       </div>
       <div className='flex flex-row flex-wrap justify-center items-center m-4'>

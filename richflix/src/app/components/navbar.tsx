@@ -34,7 +34,8 @@ export default function Navbar() {
             </div>
           </div>
             :   // if logged in, display user button       
-          <div>
+          <div className='w-full flex flex-row items-center justify-between'>
+            <Link className='mx-6 text-sm tracking-wider hover:border-b-2 border-red-600' href='/dashboard'>Dashboard</Link>
             <UserButton 
               afterSignOutUrl="/"
             />

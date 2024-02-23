@@ -44,10 +44,10 @@ const MovieList = ({fetchUrl, listName}: Props) => {
           <Image 
             src={posterUrl}
             alt={altTag}
-            width={200} 
-            height={200}
+            width={150} 
+            height={0}
             quality={100}
-            layout="intrinsic" // Ensures the image does not stretch
+            className='h-auto'
           />
         </div>
       </Link>
