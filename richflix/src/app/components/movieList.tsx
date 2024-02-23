@@ -33,23 +33,28 @@ const MovieList = ({fetchUrl, listName}: Props) => {
   
   // identifies each movie card
   const MovieCard: React.FC<Movie> = (movie) => {
-    const imageSize = "w500";
-    const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
-    const altTag: string = movie.title ? movie.title : "Movie Poster Image";
-    return (
-      <div className='flex-none px-2'>
-        <Link href={`/movies/${movie.id}`}>
+  const imageSize = "w500";
+  const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
+  const altTag: string = movie.title ? movie.title : "Movie Poster Image";
+  return (
+    // Wrap the Link and Image in an outer div for applying hover styles
+    <div className='flex-none px-2'>
+      <Link href={`/movies/${movie.id}`}>
+        <div className="transition duration-300 ease-in-out transform hover:scale-105">
           <Image 
             src={posterUrl}
             alt={altTag}
             width={200} 
             height={200}
             quality={100}
+            layout="intrinsic" // Ensures the image does not stretch
           />
-        </Link>
-      </div>
-    )
-  }
+        </div>
+      </Link>
+    </div>
+  )
+}
+
 
   // slider controls
   const slideLeft = () => {

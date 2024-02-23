@@ -1,8 +1,8 @@
 import { setCookie } from 'nookies';
 import requests from "@/app/_lib/movies/requests";
-import { GetServerSidePropsContext } from 'next';
+import type { GetServerSideProps } from 'next';
 
-export async function createNewSession(context: GetServerSidePropsContext) {
+export async function createNewSession(GetServerSideProps) {
   try {
     // Fetch request token from TMDb API
     const response = await fetch(
@@ -42,7 +42,7 @@ export async function createNewSession(context: GetServerSidePropsContext) {
     console.error('Error creating session:', error);
     return {
       redirect: {
-        destination: '/error', // Redirect to an error page
+        destination: '/error',
         permanent: false,
       },
     };
