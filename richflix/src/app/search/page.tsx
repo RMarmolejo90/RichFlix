@@ -8,7 +8,7 @@ export default function search() {
 
 
     <div>
-        {/* main nav */}
+        
         {/* search bar */}
         {/* suspense field / display results */}
     </div>
