@@ -1,9 +1,9 @@
 "use server"
 import requests from "../_lib/movies/requests"
 
-const search = async (searchString: string, queryType: string) => {
+const search = async (searchWords: string, searchType: string) => {
   try {
-    const results = await fetch(requests.queries.search+{queryType}+'?query='+{searchString}+'&page=1');
+    const results = await fetch(requests.queries.search+{searchType}+'?query='+{searchWords}+'&page=1');
     return results.json();
   } catch (error){
     throw new Error('error fetching search data');
