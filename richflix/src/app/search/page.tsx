@@ -8,8 +8,8 @@ export default function search() {
 
 
     <div>
-        
-        {/* search bar */}
+        <form action="submit"></form>
+        <input type="text" />
         {/* suspense field / display results */}
     </div>
   )

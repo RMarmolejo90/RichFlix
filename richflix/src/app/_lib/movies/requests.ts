@@ -21,6 +21,9 @@ const requests = {
     accept: 'application/json',
     Authorization: `Bearer ${apiKey}`,
     }
+  },
+  queries: {
+    search: 'https://api.themoviedb.org/3/search/',
   }
 }
 
