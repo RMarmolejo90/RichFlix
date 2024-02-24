@@ -1,10 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
 import { ArrowRightCircleIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid';
 import fetchMovieList from '@/app/_utils/fetchMovieList';
-import Link from 'next/link';
-
+import MovieCard from './movieCard';
 
 // MovieList component displays the rows of fetched movie data
 interface Props{
@@ -31,30 +29,7 @@ const MovieList = ({fetchUrl, listName}: Props) => {
   }, []);
 
   
-  // identifies each movie card
-  const MovieCard: React.FC<Movie> = (movie) => {
-  const imageSize = "w500";
-  const posterUrl = `http://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`;
-  const altTag: string = movie.title ? movie.title : "Movie Poster Image";
-  return (
-    // Wrap the Link and Image in an outer div for applying hover styles
-    <div className='flex-none px-2'>
-      <Link href={`/movies/${movie.id}`}>
-        <div className="transition duration-300 ease-in-out transform hover:scale-105">
-          <Image 
-            src={posterUrl}
-            alt={altTag}
-            width={150} 
-            height={0}
-            quality={100}
-            className='h-auto'
-          />
-        </div>
-      </Link>
-    </div>
-  )
-}
-
+ 
 
   // slider controls
   const slideLeft = () => {
