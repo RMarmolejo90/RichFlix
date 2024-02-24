@@ -22,19 +22,21 @@ export default function Navbar() {
         </h1>
       </Link>    
       <div className='ml-auto lg:my-8 font-semibold rounded-md tracking-widest text-lg'>
-        
+
         {// if not logged in, display signin/signup buttons
         !userId ?
-          <div className='flex flex-row'>
-            <div className='m-2 hover:border-b-2 hover:cursor-pointer'>
+        <div className='flex flex-row'>
+            <Link className='m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
+            <div className='m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
               <SignInButton afterSignInUrl='/'/>
             </div>
-            <div className='m-2 hover:border-b-2 hover:cursor-pointer'>
+            <div className='m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
               <SignUpButton />
             </div>
           </div>
             :   // if logged in, display user button       
           <div className='w-full flex flex-row items-center justify-between'>
+            <Link className='m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
             <Link className='mx-6 text-sm tracking-wider hover:border-b-2 border-red-600' href='/dashboard'>Dashboard</Link>
             <UserButton 
               afterSignOutUrl="/"
