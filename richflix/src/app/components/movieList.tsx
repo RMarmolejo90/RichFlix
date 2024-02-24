@@ -50,9 +50,7 @@ const MovieList = ({fetchUrl, listName}: Props) => {
         <h2 className='p-2 pl-12 font-semibold text-xl tracking-wide'>{listName}</h2>
       </div>
       <div className='w-full flex flex-row relative items-center justify-between'>
-        <ArrowLeftCircleIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
         <MovieRow movies={movies} listName={listName}/>
-        <ArrowRightCircleIcon onClick={slideRight} className='hidden p-2 m-4 right-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
       </div>
     </div>
   );
