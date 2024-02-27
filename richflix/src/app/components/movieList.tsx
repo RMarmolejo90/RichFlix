@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { ArrowRightCircleIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid';
 import fetchMovieList from '@/app/_utils/fetchMovieList';
 import MovieRow from './movieRow';
 
@@ -28,20 +27,6 @@ const MovieList = ({fetchUrl, listName}: Props) => {
     fetchData();
   }, []);
 
-  
- 
-
-  // slider controls
-  const slideLeft = () => {
-    const slider = document.getElementById('slider' + listName);
-    if (slider){
-      slider.scrollLeft = slider.scrollLeft - 400}
-  }
-  const slideRight = () => {
-    const slider = document.getElementById('slider' + listName);
-    if (slider){
-      slider.scrollLeft = slider.scrollLeft + 400}
-  }
 
 
   return (
