@@ -17,11 +17,10 @@ export default function search() {
   }
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    
     setSearchWords(e.target.value);
   }
 
-  const handleSearchType = (e: React.ChangeEvent<HTMLSelectElement>){
+  const handleSearchType = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearchType(e.target.value)
   }
 
@@ -44,7 +43,7 @@ export default function search() {
           <button className='m-4 text-slate-300'  type="submit">Search</button>
           {/* suspense field / display results */}
         </form>
-        {searchResults && <MovieRow movies={searchResults.results} listName={searchWords} />}
+        {searchResults?.results && <MovieRow movies={searchResults.results} listName={searchWords} />}
     </div>
   )
 }
