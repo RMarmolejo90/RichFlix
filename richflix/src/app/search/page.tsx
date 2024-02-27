@@ -22,25 +22,24 @@ export default function search() {
     setSearchWords(e.target.value);
   }
 
-  const handleSearchType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSearchType(e.target.value)
-  }
-
   return (
     
-    <div className='flex flex-col justify-center items-center m-60'>
-      <form className='text-slate-700 my-8' onSubmit={submitSearch}>
-        <label className='m-2 text-slate-300' htmlFor="type">Search By: </label>
-        <select className='p-2' name="type" id="type" onChange={handleSearchType}>
-          <option value="movie">Title</option>
-          <option value="person">Person</option>
-        </select>
+    <div className='flex flex-col justify-center items-center w-full'>
+      <form className='text-slate-700 my-20' onSubmit={submitSearch}>
         <input onChange={handleInput} className='m-4 p-2 tracking-wider' type="text" />
         <button className='m-4 text-slate-300'  type="submit">Search</button>
       </form>
-      <div>
-        {searchResults && <MovieRow movies={searchResults} listName={searchWords} />}
+      <div className='flex flex-col group'>
+      {searchResults && (
+        <>
+          <div className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
+            <h2 className='p-2 pl-12 font-semibold text-xl tracking-wide'>{searchWords}</h2>
+          </div>
+          <MovieRow movies={searchResults} listName={searchWords} />
+        </>
+      )}
       </div>
+
     </div>
   )
 }

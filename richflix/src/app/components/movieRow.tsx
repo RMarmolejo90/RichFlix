@@ -49,13 +49,13 @@ const MovieRow: React.FC<Props> = ({movies, listName}) => {
     }
 
     return (
-    <>
+    <div className='w-full flex flex-row justify-center'>
       <ArrowLeftCircleIcon onClick={slideLeft} className='hidden p-2 m-4 left-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />
       <div id={'slider' + listName} className='my-4 flex flex-shrink-0 w-full h-full overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide relative'>
         {movies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}     
       </div> 
       <ArrowRightCircleIcon onClick={slideRight} className='hidden p-2 m-4 right-0 h-16 w-16 text-slate-50 absolute z-10 opacity-50 hover:opacity-100 hover:cursor-pointer group-hover:block' />   
-    </>
+    </div>
     )
 }
 
