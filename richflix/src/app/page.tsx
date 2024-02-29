@@ -26,50 +26,62 @@ export default function Home() {
         <Header />
         <MovieList 
           fetchUrl={topRated}
+          name="topRated"
           listName="Top Rated"
         />
         <MovieList 
           fetchUrl={comingSoon}
+          name="comingSoon"
           listName="Coming Soon"
         />
         <MovieList 
           fetchUrl={nowPlaying}
+          name="nowPlaying"
           listName="Now Playing"
         />
         <MovieList 
           fetchUrl={comedy}
+          name="comedy"
           listName="Comedy"
         />
         <MovieList 
           fetchUrl={drama}
+          name="drama"
           listName="Drama"
         />
         <MovieList 
           fetchUrl={thriller}
+          name="thriller"
           listName="Thriller"
         />
         <MovieList 
           fetchUrl={romance}
+          name="romance"
           listName="Romance"
         />
         <MovieList 
           fetchUrl={comedyTV}
+          name="comedyTV"
           listName="Comedy TV Shows"
         />
         <MovieList 
           fetchUrl={horror}
+          name="horror"
           listName="Horror"
         />
         <MovieList 
           fetchUrl={action}
+          name="action"
           listName="Action"
         />
         <MovieList 
           fetchUrl={adventure}
+          name="adventure"
           listName="Adventure"
         />
         <MovieList 
           fetchUrl={documentary}
+          name="documentary"
           listName="Documentaries"
         />
       </main>

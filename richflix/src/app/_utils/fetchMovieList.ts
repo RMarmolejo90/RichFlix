@@ -7,7 +7,6 @@ async function fetchMovieList(fetchUrl: string): Promise<Movie[]> {
     const data: QueryData = await response.json();
     const movies = data.results;
     if (movies.length === 0) {throw new Error('movies not found')}
-    console.log(movies)
     return movies;
     
   } catch (error) {
