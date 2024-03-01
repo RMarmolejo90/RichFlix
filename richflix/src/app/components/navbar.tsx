@@ -26,18 +26,18 @@ export default function Navbar() {
         {// if not logged in, display signin/signup buttons
         !userId ?
         <div className='flex flex-row'>
-            <Link className='lg:text-md text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
-            <div className='lg:text-md text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
+            <Link className='lg:text-lg text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
+            <div className='lg:text-lg text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
               <SignInButton afterSignInUrl='/'/>
             </div>
-            <div className='lg:text-md text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
+            <div className='lg:text-lg text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer'>
               <SignUpButton />
             </div>
           </div>
             :   // if logged in, display user button       
           <div className='w-full flex flex-row items-center justify-between'>
-            <Link className='lg:text-md text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
-            <Link className='lg:text-md text-sm mx-6 tracking-wider hover:border-b-2 border-red-600' href='/dashboard'>Dashboard</Link>
+            <Link className='lg:text-lg text-sm m-2 hover:border-b-2 border-red-600 hover:cursor-pointer' href={'/search'}>Search</Link>
+            <Link className='lg:text-lg text-sm mx-6 tracking-wider hover:border-b-2 border-red-600' href='/dashboard'>Dashboard</Link>
             <UserButton 
               afterSignOutUrl="/"
             />

@@ -36,9 +36,9 @@ export default async function header() {
           <h1 className='text-2xl tracking-wide font-bold p-2'>{displayMovie.title}</h1>
           <p className='m-3 text-md line-clamp-4'>{description}</p>
           <Link 
-            className='p-2 m-2 border border-gray-200 tracking-wider font-semibold text-xs hover:border-gray-50 hover:text-gray-50'
+            className='p-3 m-2 border rounded-sm bg-[rgba(2,6,23,0.45)] hover:border-red-600 border-gray-200 tracking-widest font-semibold text-sm hover:text-gray-50'
             href={`/movies/${displayMovie.id}`}>
-            Details
+            DETAILS
           </Link>
         </div>
       )}
