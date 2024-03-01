@@ -12,10 +12,19 @@ type RequestKeys = keyof typeof requests;
 function List({ params }: { params: { slug: RequestKeys } }) {
   const movies = useFetchDynamicList(params.slug); 
 
+ function capitalizeAndSpace(str: string) {
+    const parts = str.split(/(?=[A-Z])/);
+    const capitalizedParts = parts.map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase());
+    return capitalizedParts.join(' ');
+  }
+
   return (
-    <div className='my-48 flex flex-col group'>
-      <MovieRow movies={movies} listName={params.slug} /> 
-    </div>
+    <>
+      <h1>{capitalizeAndSpace(params.slug)}</h1>
+      <div className='my-48 flex flex-col group'>
+        <MovieRow movies={movies} listName={params.slug} /> 
+      </div>
+    </>
   );
 }
 
