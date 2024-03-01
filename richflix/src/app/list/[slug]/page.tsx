@@ -19,12 +19,12 @@ function List({ params }: { params: { slug: RequestKeys } }) {
   }
 
   return (
-    <>
-      <h1>{capitalizeAndSpace(params.slug)}</h1>
-      <div className='my-48 flex flex-col group'>
+    <div className='my-20 flex flex-col justify-center items-center'>
+      <h1 className=' font-bold text-5xl tracking-wider text-slate-600'>{capitalizeAndSpace(params.slug)}</h1>
+      <div className='my-20 flex flex-col group'>
         <MovieRow movies={movies} listName={params.slug} /> 
       </div>
-    </>
+    </div>
   );
 }
 
