@@ -33,7 +33,7 @@ const MovieList = ({fetchUrl, name, listName}: Props) => {
 
   return (
     <div className='flex flex-col group'>
-      <Link href={`/list/${name}`} className='border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
+      <Link href={`/list/${name}`} className='hover:font-bold hover-gradient border-t-2 border-l-2 rounded-tl-3xl border-red-500'>
         <h2 className='p-2 pl-12 font-semibold text-xl tracking-wide'>{listName}</h2>
       </Link>
       <div className='w-full flex flex-row relative items-center justify-between'>
