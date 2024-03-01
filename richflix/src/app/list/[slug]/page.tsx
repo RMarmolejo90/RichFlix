@@ -19,9 +19,9 @@ function List({ params }: { params: { slug: RequestKeys } }) {
   }
 
   return (
-    <div className='my-20 flex flex-col justify-center items-center'>
-      <h1 className=' font-bold text-5xl tracking-wider text-slate-600'>{capitalizeAndSpace(params.slug)}</h1>
-      <div className='my-20 flex flex-col group'>
+    <div className='my-20 lg:my-4 flex flex-col justify-between items-center text-center w-full min-h-full'>
+      <h1 className='my-6 lg:my-2 font-bold text-4xl lg:text-5xl tracking-wider text-slate-500'>{capitalizeAndSpace(params.slug)}</h1>
+      <div className='mb-6 mt-auto py-10 lg:py-2 flex flex-col group drop-shadow-[0_0_90px_rgb(220,38,38)]'>
         <MovieRow movies={movies} listName={params.slug} /> 
       </div>
     </div>
