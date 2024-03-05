@@ -11,7 +11,7 @@ const topRated = requests.topRated;
 export default function Dashboard() {
 
   if (!userId){ redirect('/') }
-  else createNewSession(userId) 
+  else createNewSession() 
 
   return (
     <>
