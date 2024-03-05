@@ -2,7 +2,7 @@ import { setCookie } from 'nookies';
 import requests from "@/app/_lib/movies/requests";
 import type { GetServerSideProps } from 'next';
 
-export async function createNewSession(GetServerSideProps) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     // Fetch request token from TMDb API
     const response = await fetch(
