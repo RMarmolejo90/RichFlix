@@ -57,7 +57,7 @@ export default async function page({ params: { movieId } }: Params) {
         </div>
       </div>
       <div className='flex flex-row flex-wrap justify-center items-center m-4 '>
-        {genresName.map(genre => (<p className='text-lg my-4 mx-2'>{genre}</p>))}
+        {genresName.map(genre => (<p className='text-lg my-4 mx-2' key={genre}>{genre}</p>))}
       </div>
     </div>
   )

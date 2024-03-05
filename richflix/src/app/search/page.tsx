@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import MovieRow from '../components/movieRow';
 import fetchMovieList from '../_utils/fetchMovieList';
 
-export default function search() {
+export default function Search() {
 
   const [searchWords,setSearchWords] = useState('');
   const [searchType, setSearchType] = useState('movie');
