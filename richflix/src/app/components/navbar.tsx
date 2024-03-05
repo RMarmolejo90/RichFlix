@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div className='w-full flex flex-row align-top content-between p-2 z-50 bg-gradient-to-b from-[#09090bCC] absolute top-0'>
       <Link href="/">
-        <h1 className={`${bebas.className} mr-auto m-2 text-red-600 text-xl lg:text-4xl tracking-wider hover:font-bold`}>
+        <h1 className={`${bebas.className} mr-auto m-2 text-red-600 text-xl lg:text-4xl tracking-tight hover:font-bold`}>
             RICHFLIX
         </h1>
       </Link>    
