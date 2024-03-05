@@ -2,7 +2,6 @@
 
 const nextConfig = {
   basePath: "/richflix",
-  output: "export",
   images: {
     domains: ["image.tmdb.org"],
   },
