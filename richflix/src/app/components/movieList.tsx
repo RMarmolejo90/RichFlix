@@ -27,7 +27,7 @@ const MovieList = ({fetchUrl, name, listName}: Props) => {
     };
 
     fetchData();
-  }, []);
+  }, [fetchUrl]);
 
 
 
