@@ -62,11 +62,11 @@ const MovieRow: React.FC<Props> = ({movies, listName}) => {
 
     return (
     <div className='w-full flex flex-row justify-center items-center overflow-x-scroll scroll-smooth scrollbar-hide'>
-      {isMobile && <ArrowLeftCircleIcon onClick={slideLeft} className='hidden p-2 m-10 left-0 h-32 w-32 text-slate-50 absolute z-10 opacity-75 hover:opacity-100 hover:cursor-pointer group-hover:block' />}
+      {!isMobile && <ArrowLeftCircleIcon onClick={slideLeft} className='hidden p-2 m-10 left-0 h-32 w-32 text-slate-50 absolute z-10 opacity-75 hover:opacity-100 hover:cursor-pointer group-hover:block' />}
       <div id={'slider' + listName} className='max-w-[100vw] my-4 flex flex-shrink-0 overflow-x-scroll scroll-smooth whitespace-nowrap text-white scrollbar-hide relative'>
         {filteredMovies.map((movie:Movie) => (<MovieCard key={movie.id} {...movie}/>))}     
       </div> 
-      {isMobile && <ArrowRightCircleIcon onClick={slideRight} className='hidden p-2 m-10 right-0 h-30 w-32 text-slate-50 absolute z-10 opacity-75 hover:opacity-100 hover:cursor-pointer group-hover:block' />}    
+      {!isMobile && <ArrowRightCircleIcon onClick={slideRight} className='hidden p-2 m-10 right-0 h-30 w-32 text-slate-50 absolute z-10 opacity-75 hover:opacity-100 hover:cursor-pointer group-hover:block' />}    
       </div>
     )
 }
