@@ -23,7 +23,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className='w-full flex flex-col justify-center items-center'>
+      <div className='w-full flex flex-col justify-center items-center bg-gradient-to-b from-transparent via-slate-900 to-transparent'>
         <div className='p-4 lg:w-2/3 flex flex-col justify-center items-center text-center'>
           <h2 className='p-10 text-5xl font-bold text-slate-500 uppercase'>Coming Soon</h2>
           <h3 className='py-4 lg:p-10 text-2xl leading-loose font-semibold'>Thanks for visiting my website. I haven&apos;t implemented the user dashboard yet, but eventually this is where you&apos;ll find the movies you&apos;ve saved to your watchlist. So Stay tuned for updates.</h3> 
