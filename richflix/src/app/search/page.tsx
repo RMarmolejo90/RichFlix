@@ -26,7 +26,7 @@ export default function Search() {
     
     <div className='flex flex-col justify-center items-center w-full'>
       <form className='text-slate-700 mt-40 mb-10 z-80 drop-shadow-[0_0_20px_rgb(220,38,38)]' onSubmit={submitSearch}>
-        <input onChange={handleInput} className='m-4 px-8 p-2 tracking-wider ' type="text" />
+        <input onChange={handleInput} placeholder='Search Keywords' className='m-4 px-8 p-2 tracking-wider ' type="text" />
         <button className='m-4 text-slate-300 drop-shadow-[0_0_10px_rgb(220,38,38)] font-semibold uppercase'  type="submit">Search</button>
       </form>
       <div className='flex flex-col group'>

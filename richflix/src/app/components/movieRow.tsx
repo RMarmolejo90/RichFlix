@@ -49,7 +49,7 @@ const MovieRow: React.FC<Props> = ({movies, listName}) => {
             <Image 
               src={posterUrl}
               alt={altTag}
-              width={300} 
+              width={200} 
               height={0}
               quality={100}
               className='h-auto '
