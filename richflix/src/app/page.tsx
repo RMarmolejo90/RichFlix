@@ -25,19 +25,9 @@ export default function Home() {
       <main className=''>
         <Header />
         <MovieList 
-          fetchUrl={topRated}
-          name="topRated"
-          listName="Top Rated"
-        />
-        <MovieList 
           fetchUrl={comingSoon}
           name="comingSoon"
           listName="Coming Soon"
-        />
-        <MovieList 
-          fetchUrl={nowPlaying}
-          name="nowPlaying"
-          listName="Now Playing"
         />
         <MovieList 
           fetchUrl={comedy}
@@ -78,6 +68,11 @@ export default function Home() {
           fetchUrl={adventure}
           name="adventure"
           listName="Adventure"
+        />
+        <MovieList 
+          fetchUrl={topRated}
+          name="topRated"
+          listName="Top Rated"
         />
         <MovieList 
           fetchUrl={documentary}
